@@ -1,0 +1,52 @@
+classDiagram
+    class User {
+        +id
+        +name
+        +email
+        +password
+    }
+
+    class Article {
+        +id
+        +title
+        +content
+        +userId
+        +categoryId
+        +tags
+    }
+
+    class Comment {
+        +id
+        +content
+        +userId
+        +articleId
+    }
+
+    class Tag {
+        +id
+        +name
+    }
+
+    class Category {
+        +id
+        +name
+    }
+
+    class Admin {
+        +id
+        +name
+        +email
+        +password
+    }
+
+    %% Relations
+    User --|> Article : "writes"
+    Article --|> Comment : "has"
+    User --|> Comment : "adds"
+    Article --|> Tag : "has"
+    Article --|> Category : "belongs to"
+    Admin --|> Article : "manages"
+    Admin --|> Tag : "manages"
+    Admin --|> Category : "manages"
+    Admin --|> Comment : "manages"
+    Admin --|> User : "manages"

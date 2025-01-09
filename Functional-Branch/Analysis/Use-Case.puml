@@ -1,0 +1,12 @@
+@startuml
+left to right direction
+actor "Trainer" as fc
+rectangle DisplayBoard {
+  usecase "Update" as UC1
+  usecase "Add" as UC2
+  usecase "Display" as UC3
+}
+fc --> UC1
+fc --> UC2
+fc --> UC3
+@enduml
