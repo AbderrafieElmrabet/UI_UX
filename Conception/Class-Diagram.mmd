@@ -1,0 +1,29 @@
+classDiagram
+    class DisplayBoard {
+        +String id
+        +String title
+        +String content
+        +DateTime createdAt
+        +DateTime updatedAt
+        +create()
+        +update()
+        +delete()
+    }
+
+    class Admin {
+        +String id
+        +String name
+        +String email
+        +manageBoard(DisplayBoard)
+    }
+
+    class System {
+        +List~BulletinBoard~ boards
+        +createBoard(title: String, content: String)
+        +updateBoard(id: String, newTitle: String, newContent: String)
+        +deleteBoard(id: String)
+        +listBoards()
+    }
+
+    Admin --> System : "uses"
+    System --> DisplayBoard : "manages"
