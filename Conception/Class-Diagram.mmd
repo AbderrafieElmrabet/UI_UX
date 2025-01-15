@@ -1,10 +1,12 @@
 classDiagram
     class DisplayBoard {
-        +String id
-        +String title
-        +String content
-        +DateTime createdAt
-        +DateTime updatedAt
+        +String: id
+        +String: title
+        +String: content
+        +startDate: Date
+        +endDate: Date
+        +status: String
+        +getStatus(): String
     }
 
     class Admin {
